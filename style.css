@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdfdfd;
+  color: #222;
+  padding-top: 70px;
+}
+
+:root {
+  --orange: #3a5411;
+  --blue: #d7c5ee;
+  --red: #caa2a2;
+  --yellow: #945c5c6c;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(to bottom, var(--blue) 0%, #003171 100%);
+  color: white;
+  box-shadow: 0 4px 10px rgba(2, 1, 22, 0.2);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  font-weight: bold;
+  gap: 12px;
+}
+
+.kanji-logo {
+  width: 60px;
+  height: 60px;
+}
+
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav a {
+  color: rgb(219, 139, 139);
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 25px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: var(--orange);
+}
+
+nav a:focus {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+
+}
+
+.hero {
+  height: 600px;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4PVJH24TshTTxIFd4WxiF1D7mvBDyWVhYRV2xI56Sm8fCzhUhG3HyzQXVskXMDpC9v488i50efr-GmCe5rvHqvJFXlWP3eHdrHrxjPcaKWA);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+
+.hero-content h1 {
+  color: #000000bd;
+  font-size: 48px;
+  margin-bottom: 20px;
+  position: relative;
+  text-shadow: 0 0 10px #181701, 0 0 20px #f2a531;
+}
+
+
+.hero-content p {
+  color: #181701;
+  font-size: 25px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px #181701, 0 0 20px #f2a531;
+}
+
+
+
+.cta-btn,
+.signup button {
+  background-color: var(--red);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  animation: magicPulse 3s infinite ease-in-out;
+  box-shadow: 0 0 15px var(--red);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cta-btn:hover,
+.signup button:hover {
+  animation-play-state: paused;
+  background-color: var(--orange);
+  transform: scale(1.1);
+  box-shadow: 0 0 30px var(--orange);
+  text-decoration: none;
+}
+
+.cta-btn:focus,
+.signup button:focus {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 60px 20px;
+  background-color: var(--yellow);
+  text-align: center;
+  gap: 30px;
+  margin-top: 0;
+}
+
+.card {
+  background-color: rgb(175, 54, 54);
+  padding: 40px;
+  width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(255, 165, 0, 0.3);
+}
+
+.card i {
+  font-size: 40px;
+  color: var(--orange);
+  margin-top: 25px;
+}
+.card h3 {
+  font-weight: bold;
+}
+
+.signup {
+  background: linear-gradient(to bottom, var(--blue) 0%, #003171 100%);
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
+
+.signup h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.signup form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.signup input {
+  padding: 10px;
+  width: 300px;
+  max-width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .logo-overlay {
+    margin-top: -50px;
+    margin-bottom: -50px;
+  }
+
+  .logo-overlay img {
+    width: 280px;
+  }
+}
